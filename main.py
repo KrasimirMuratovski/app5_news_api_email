@@ -1,9 +1,14 @@
 import send_email
 import requests as re
 
+from datetime import datetime
+
+today = datetime.now()
+today = today.strftime("%y-%m-%d")
+
 api_key="187643a5a4e34174ab357a24f96fbd1b"
-topic = 'Tesla'
-url = (f"https://newsapi.org/v2/everything?q={topic}&from=2024-10-06&sortBy="
+topic = 'Trump'
+url = (f"https://newsapi.org/v2/everything?q={topic}&from={today}&sortBy="
 	   "publishedAt&apiKey=187643a5a4e34174ab357a24f96fbd1b&language=en")
 
 request = re.get(url)
